@@ -4,8 +4,8 @@ Bu uygulama, UHF RFID okuyucu cihazından gelen verileri TCP/IP WebSocket bağla
 
 ## Ekran Görüntüsü
 
-![RFID Tag Okuyucu Uygulaması](screenshots/Screenshot_1749741010.png)(screenshots/Screenshot_1749741013.png)
-
+![RFID Tag Okuyucu Uygulaması](screenshots/Screenshot_1749741010.png)
+![RFID Tag Okuyucu Uygulaması](screenshots/Screenshot_1749741013.png)
 ## Özellikler
 
 - Gerçek zamanlı RFID tag verisi okuma
