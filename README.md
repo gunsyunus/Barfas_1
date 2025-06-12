@@ -2,6 +2,10 @@
 
 Bu uygulama, UHF RFID okuyucu cihazından gelen verileri TCP/IP WebSocket bağlantısı üzerinden dinleyen ve görselleştiren bir .NET MAUI uygulamasıdır.
 
+## Ekran Görüntüsü
+
+![RFID Tag Okuyucu Uygulaması](screenshots/Screenshot_1749741010.png)(screenshots/Screenshot_1749741013.png)
+
 ## Özellikler
 
 - Gerçek zamanlı RFID tag verisi okuma
