@@ -20,7 +20,7 @@ Bu uygulama, UHF RFID okuyucu cihazından gelen verileri TCP/IP WebSocket bağla
 
 1. Repoyu klonlayın:
 ```bash
-git clone https://github.com/[KULLANICI_ADI]/Barfas_1.git
+git clone https://github.com/gunsyunus/Barfas_1.git
 ```
 
 2. Visual Studio'da projeyi açın
