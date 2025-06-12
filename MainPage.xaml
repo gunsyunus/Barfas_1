@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Barfas_1.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="15" Padding="20">
+            
+            <Label 
+                Text="RFID Tag Okuyucu"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="32"
+                HorizontalOptions="Center" />
+
+            <Frame BorderColor="Gray" Padding="10" Margin="0,10">
+                <HorizontalStackLayout Spacing="10">
+                    <Entry 
+                        x:Name="SayacInput"
+                        Placeholder="Eşik değerini girin"
+                        Keyboard="Numeric"
+                        WidthRequest="200"/>
+                    <Button 
+                        x:Name="StartButton"
+                        Text="Başlat"
+                        SemanticProperties.Hint="RFID okumayı başlatır"
+                        Clicked="OnStartClicked"
+                        HorizontalOptions="Center" />
+                </HorizontalStackLayout>
+            </Frame>
+
+            <Frame BorderColor="Gray" Padding="10">
+                <VerticalStackLayout Spacing="5">
+                    <Label 
+                        Text="Okunan Tag Sayısı:"
+                        FontSize="18"/>
+                    <Label 
+                        x:Name="TagCounter"
+                        Text="0"
+                        FontSize="24"
+                        FontAttributes="Bold"
+                        HorizontalOptions="Center"/>
+                </VerticalStackLayout>
+            </Frame>
+
+            <Label 
+                x:Name="ThresholdWarning"
+                Text="Yeterli Sayıda Etiket Okunmuştur!"
+                TextColor="Green"
+                FontSize="18"
+                IsVisible="False"
+                HorizontalOptions="Center"/>
+
+            <ListView x:Name="TagListView" HeightRequest="400">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                
+                                <Label Grid.Row="0" Grid.Column="0" 
+                                       Text="{Binding TagId}" 
+                                       FontAttributes="Bold"/>
+                                <Label Grid.Row="1" Grid.Column="0" 
+                                       Text="{Binding ReadTime, StringFormat='{0:HH:mm:ss}'}" 
+                                       TextColor="Gray"/>
+                                <Label Grid.Row="0" Grid.Column="1" Grid.RowSpan="2"
+                                       Text="{Binding Rssi, StringFormat='RSSI: {0}dBm'}"
+                                       VerticalOptions="Center"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
